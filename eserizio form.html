@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Document</title>
+</head>
+
+<body>
+    <form id="invio" name="registr">
+
+        <label for="nom">Nome</label><br>
+
+        <input type="text" id="nom" name="nome" placeholder="isnerisci il tuo nome" value="" size="30"
+            maxlength="30"><br>
+
+        <label for="cogno">Cognome</label><br>
+
+        <input type="text" id="cogno" name="cognome" placeholder="inserisci il tuo cognome" value="" size="40"
+            maxlength="40"><br>
+
+        <label for="email">Email</label><br>
+
+        <input type="text" id="email" name="email" placeholder="inserisci email" size="30" maxlength="30"><br><br>
+
+        <label for="te">Numero di telefono</label><br>
+
+        <input type="text" id="te" name="tel" placeholder="inserisci il numero di telefono" size="15"
+            maxlength="15"><br><br>
+
+        <input type="submit" value="Invia">
+
+        <input type="reset" value="Reset">
+
+    </form>
+
+    <script>
+        document.getElementById("invio").addEventListener("submit", controlla);
+
+        function controlla(event) {
+
+            let v = parseInt(document.forms.registr.value);
+
+            if (document.forms.registr.nome.value == "") {
+
+                document.forms.registr.nome.style.backgroundColor = 'red';
+                event.preventDefault();
+
+            } else if (document.forms.registr.cognome.value == "") {
+
+                document.forms.registr.cognome.style.backgroundColor = 'red';
+                event.preventDefault();
+
+            } else if (document.forms.registr.tel.value == "") {
+
+                document.forms.registr.tel.style.backgroundColor = 'red';
+                event.preventDefault();
+
+            } else if (document.forms.registr.email.value == "") {
+
+                document.forms.registr.email.style.backgroundColor = 'red';
+                event.preventDefault();
+
+            } else {
+
+                document.forms.registr.nome.style.backgroundColor = 'green';
+                document.forms.registr.cognome.style.backgroundColor = 'green';
+                document.forms.registr.tel.style.backgroundColor = 'green';
+                document.forms.registr.email.style.backgroundColor = 'green';
+                event.preventDefault();
+            }
+
+        }
+
+    </script>
+</body>
+
+</html>
